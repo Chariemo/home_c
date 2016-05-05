@@ -14,7 +14,6 @@ typedef struct {
 
 void sort(activity *ac, int n) {
     int i, j;
-    bool s;
     activity  temp;
 
     for (i = 1; i < n*2; i++) {
@@ -33,7 +32,7 @@ int partitoin(activity *ac, int p, int n) {
     int i = p - 1;
     int j;
     activity temp;
-    for (j = p; j <= n-1; j++) {
+    for (j = p; j < n; j++) {
         if (ac[j].t <= x) {
             i += 1;
             temp = ac[j];
@@ -58,6 +57,7 @@ int main(void) {
     int n, i, max_count;
     printf("输入活动个数: ");
     scanf("%d", &n);
+    getchar();
     activity ac[n*2];
     printf("输入活动开始以及结束时间: ");
     for (i = 0; i < n*2; i++){
@@ -67,7 +67,8 @@ int main(void) {
         else
             ac[i].isSt = false;
     }
-    sort_q(ac, 0, n-1);
+    sort_q(ac, 0, n*2-1);
+    //sort(ac, n);
     for (i = 0; i < n*2; i++) {
         printf("%d ", ac[i].t);
     }
@@ -82,7 +83,7 @@ int main(void) {
     }
     max_count = count[0];
     for (i = 1; i < n*2; i++)
-        if (max_count < count[i])
+        if (max_count <= count[i])
             max_count = count[i];
     printf("至少需会场数: %d\n", max_count);
     return 0;
