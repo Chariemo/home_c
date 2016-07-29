@@ -1,7 +1,7 @@
 /*************************************************************************
 	> File Name: cut_rod.c
-	> Author: 
-	> Mail: 
+	> Author:
+	> Mail:
 	> Created Time: 2016年04月26日 星期二 16时21分45秒
  ************************************************************************/
 
@@ -19,7 +19,6 @@ int cut_rod(int *p, int n) {
     }
     return q;
 }
-
 
 //带备忘录自顶向下cut_rod
 int memoized_cut_rod_aux(int *p, int n, int *r) {
@@ -74,4 +73,4 @@ int main(void) {
     }
     printf ("max_values: %d\n", bottom_up_cut_rod(p, N));
     return 0;
-} 
+}

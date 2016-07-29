@@ -6,7 +6,7 @@ void insertsort(int *arr, int n) {
     for (j = 1; j <= n; j++) {
         i = j - 1;
         key = arr[j];
-        while (i > -1 && arr[i] < key) {
+        while (i > -1 && arr[i] > key) {
             arr[i+1] = arr[i];
             i--;
         }
