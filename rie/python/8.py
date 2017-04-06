@@ -1,0 +1,11 @@
+#coding=utf-8
+i=1
+mu=0 
+s=0.0
+n=int(raw_input("请输入n的值:"))
+while i<=n:
+	mu+=1
+	i+=1
+	t=1.0/mu
+	s=s+t
+print's=',s
